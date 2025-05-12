@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Horizon Interior Designs</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#D4AF37',secondary:'#333333'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+color: #333333;
+background-color: #FAF9F6;
+}
+h1, h2, h3, h4, h5, h6 {
+font-family: 'Playfair Display', serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=luxury%20modern%20interior%20design%20with%20minimalist%20aesthetic%2C%20penthouse%20living%20room%20with%20floor-to-ceiling%20windows%2C%20panoramic%20city%20view%2C%20neutral%20color%20palette%20with%20gold%20accents%2C%20high-end%20furniture%2C%20marble%20surfaces%2C%20soft%20lighting%2C%20ultra-high%20resolution%2C%20photorealistic%2C%20architectural%20photography&width=1920&height=1080&seq=hero1&orientation=landscape');
+background-size: cover;
+background-position: center;
+position: relative;
+}
+.hero-overlay {
+background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+}
+.showcase-item:hover .showcase-overlay {
+opacity: 1;
+}
+.testimonial-card {
+transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+}
+.partner-logo {
+filter: grayscale(100%);
+transition: all 0.3s ease;
+}
+.partner-logo:hover {
+filter: grayscale(0%);
+transform: scale(1.05);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #D4AF37;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #7D7D7D;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #D4AF37;
+border-color: #D4AF37;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.whatsapp-button {
+box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+transition: all 0.3s ease;
+}
+.whatsapp-button:hover {
+transform: scale(1.05);
+box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #D4AF37;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+width: 100%;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 48px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 24px;
+}
+.switch-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .switch-slider {
+background-color: #D4AF37;
+}
+input:checked + .switch-slider:before {
+transform: translateX(24px);
+}
+</style>
+</head>
+<body>
+<!-- Navigation -->
+<nav class="fixed w-full bg-transparent z-50 transition-all duration-300" id="navbar">
+<div class="container mx-auto px-6 py-4 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-home-smile-fill ri-2x text-primary"></i>
+</div>
+<a href="index.html" class="text-3xl font-['Pacifico'] text-white">Horizon Interiors</a>
+</div>
+<div class="hidden md:flex space-x-8">
+<a href="index.html" class="nav-link text-white hover:text-primary transition-colors">Home</a>
+<a href="index2.html" class="nav-link text-white hover:text-primary transition-colors active">About Us</a>
+<a href="#portfolio" class="nav-link text-white hover:text-primary transition-colors">Portfolio</a>
+<a href="#resources" class="nav-link text-white hover:text-primary transition-colors">Resources</a>
+<a href="#contact" class="nav-link text-white hover:text-primary transition-colors">Contact</a>
+</div>
+<div class="md:hidden w-8 h-8 flex items-center justify-center text-white cursor-pointer">
+<i class="ri-menu-line ri-2x"></i>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu -->
+<div class="fixed inset-0 bg-secondary z-50 transform translate-x-full transition-transform duration-300 md:hidden" id="mobile-menu">
+<div class="flex justify-end p-6">
+<div class="w-8 h-8 flex items-center justify-center text-white cursor-pointer" id="close-menu">
+<i class="ri-close-line ri-2x"></i>
+</div>
+</div>
+<div class="flex flex-col items-center space-y-8 mt-16">
+<a href="index.html" class="text-white text-xl hover:text-primary transition-colors">Home</a>
+<a href="about.html" class="text-white text-xl hover:text-primary transition-colors">About Us</a>
+<a href="#portfolio" class="text-white text-xl hover:text-primary transition-colors">Portfolio</a>
+<a href="#resources" class="text-white text-xl hover:text-primary transition-colors">Resources</a>
+<a href="#contact" class="text-white text-xl hover:text-primary transition-colors">Contact</a>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section h-[70vh] flex items-center" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20luxury%20interior%20design%20studio%20with%20designers%20working%2C%20natural%20light%2C%20glass%20walls%2C%20design%20samples%20and%20materials%2C%20architectural%20plans%2C%20sophisticated%20workspace%20with%20high-end%20finishes%2C%20photorealistic%20commercial%20interior&width=1920&height=1080&seq=about_hero&orientation=landscape')">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-6 z-10">
+<div class="w-full md:w-2/3 lg:w-1/2">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Our Story & Vision</h1>
+<p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl">Discover the passion, expertise, and dedication behind Horizon Interior Designs. We're more than designers – we're storytellers who bring spaces to life.</p>
+</div>
+</div>
+</section>
+<!-- Our Story Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Journey</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">Founded in 2015 by award-winning designer Olivia Richardson, Horizon Interior Designs began with a simple yet powerful vision: to create spaces that inspire, nurture, and elevate the human experience.</p>
+<p class="text-gray-600 mb-6 leading-relaxed">What started as a boutique studio in New York has grown into a renowned design collective, bringing together talented designers, architects, and artisans from around the world. Our portfolio spans residential sanctuaries, commercial landmarks, and hospitality destinations across the globe.</p>
+<p class="text-gray-600 leading-relaxed">Today, we're proud to be recognized as industry leaders, having received multiple awards for our innovative designs and sustainable practices. Our commitment to excellence and client satisfaction remains at the heart of everything we do.</p>
+</div>
+<div class="w-full lg:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=elegant%20interior%20design%20meeting%2C%20designers%20reviewing%20material%20samples%20and%20blueprints%2C%20modern%20office%20setting%2C%20professional%20atmosphere%2C%20natural%20light%2C%20high-end%20workspace&width=600&height=400&seq=about_story&orientation=landscape" alt="Our Story" class="w-full h-auto rounded-lg shadow-xl">
+</div>
+</div>
+</div>
+</section>
+<!-- Values and Philosophy -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Values & Philosophy</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Our design philosophy is built on four core principles that guide every project we undertake.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-heart-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Client-Centric Design</h3>
+<p class="text-gray-600">Every design decision is made with our clients' needs, preferences, and lifestyle in mind. Your story is at the heart of our creative process.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-leaf-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Sustainable Innovation</h3>
+<p class="text-gray-600">We believe in creating spaces that are not only beautiful but also environmentally responsible, using sustainable materials and practices.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-focus-3-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Attention to Detail</h3>
+<p class="text-gray-600">From the grandest architectural elements to the smallest decorative touches, we ensure every detail contributes to the overall vision.</p>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-lg">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<i class="ri-team-line text-primary ri-2x"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Collaborative Spirit</h3>
+<p class="text-gray-600">We foster strong partnerships with clients, architects, craftsmen, and artists to bring the finest expertise to each project.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Process -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Design Process</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">A structured yet flexible approach that ensures every project is executed with precision and creativity.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">01</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Discovery & Vision</h3>
+<p class="text-gray-600">We begin with an in-depth consultation to understand your needs, preferences, and aspirations for the space.</p>
+</div>
+</div>
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">02</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Concept Development</h3>
+<p class="text-gray-600">Our team creates detailed design concepts, including space planning, material selection, and visual direction.</p>
+</div>
+</div>
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">03</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Design Refinement</h3>
+<p class="text-gray-600">We refine the design through collaborative feedback, ensuring every element aligns with your vision.</p>
+</div>
+</div>
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">04</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Documentation</h3>
+<p class="text-gray-600">Detailed drawings, specifications, and documentation are prepared for precise execution.</p>
+</div>
+</div>
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">05</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Implementation</h3>
+<p class="text-gray-600">We oversee the execution, coordinating with contractors and vendors to ensure quality implementation.</p>
+</div>
+</div>
+<div class="relative p-8">
+<div class="absolute top-8 left-8 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-xl">06</div>
+<div class="ml-24">
+<h3 class="text-xl font-bold mb-4">Final Styling</h3>
+<p class="text-gray-600">The finishing touches that bring your space to life, creating a cohesive and personalized environment.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Design Showcase -->
+<section id="portfolio" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Design Portfolio</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Discover our collection of meticulously crafted interior spaces, each telling a unique story of elegance and functionality.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Showcase Item 1 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=luxury%20modern%20living%20room%20with%20neutral%20color%20palette%2C%20minimalist%20furniture%2C%20large%20windows%2C%20natural%20light%2C%20marble%20coffee%20table%2C%20designer%20sofa%2C%20architectural%20details%2C%20high-end%20interior%20design%2C%20photorealistic%20rendering&width=600&height=400&seq=interior1&orientation=landscape" alt="Modern Penthouse" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Residential</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Manhattan Penthouse</h3>
+<p class="text-gray-600">Luxury Residential</p>
+</div>
+</div>
+<!-- Showcase Item 2 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=modern%20office%20space%20with%20glass%20partitions%2C%20minimalist%20furniture%2C%20collaborative%20areas%2C%20natural%20light%2C%20indoor%20plants%2C%20wooden%20accents%2C%20high-end%20corporate%20interior%20design%2C%20professional%20workspace%2C%20photorealistic%20rendering&width=600&height=400&seq=interior2&orientation=landscape" alt="Corporate Office" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Commercial</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Vertex Headquarters</h3>
+<p class="text-gray-600">Corporate Office</p>
+</div>
+</div>
+<!-- Showcase Item 3 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=luxury%20restaurant%20interior%20with%20elegant%20dining%20area%2C%20ambient%20lighting%2C%20custom%20furniture%2C%20sophisticated%20color%20palette%2C%20high%20ceilings%2C%20architectural%20details%2C%20fine%20dining%20atmosphere%2C%20high-end%20hospitality%20design%2C%20photorealistic%20rendering&width=600&height=400&seq=interior3&orientation=landscape" alt="Fine Dining Restaurant" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Hospitality</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Elysian Restaurant</h3>
+<p class="text-gray-600">Fine Dining</p>
+</div>
+</div>
+<!-- Showcase Item 4 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=luxury%20bathroom%20with%20freestanding%20bathtub%2C%20marble%20surfaces%2C%20glass%20shower%20enclosure%2C%20designer%20fixtures%2C%20ambient%20lighting%2C%20minimalist%20aesthetic%2C%20spa-like%20atmosphere%2C%20high-end%20residential%20interior%2C%20photorealistic%20rendering&width=600&height=400&seq=interior4&orientation=landscape" alt="Luxury Bathroom" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Residential</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Serenity Spa Suite</h3>
+<p class="text-gray-600">Luxury Bathroom</p>
+</div>
+</div>
+<!-- Showcase Item 5 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=modern%20retail%20store%20interior%20with%20custom%20display%20fixtures%2C%20ambient%20lighting%2C%20minimalist%20design%2C%20high-end%20finishes%2C%20spacious%20layout%2C%20branded%20elements%2C%20luxury%20shopping%20experience%2C%20commercial%20interior%20design%2C%20photorealistic%20rendering&width=600&height=400&seq=interior5&orientation=landscape" alt="Retail Boutique" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Commercial</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Lumière Boutique</h3>
+<p class="text-gray-600">Retail Space</p>
+</div>
+</div>
+<!-- Showcase Item 6 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=modern%20kitchen%20with%20island%2C%20high-end%20appliances%2C%20marble%20countertops%2C%20custom%20cabinetry%2C%20pendant%20lighting%2C%20minimalist%20design%2C%20neutral%20color%20palette%2C%20luxury%20residential%20interior%2C%20photorealistic%20rendering&width=600&height=400&seq=interior6&orientation=landscape" alt="Designer Kitchen" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Residential</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Culinary Haven</h3>
+<p class="text-gray-600">Designer Kitchen</p>
+</div>
+</div>
+<!-- Showcase Item 7 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=luxury%20hotel%20lobby%20with%20grand%20entrance%2C%20high%20ceilings%2C%20custom%20lighting%20fixtures%2C%20elegant%20furniture%2C%20marble%20flooring%2C%20reception%20desk%2C%20sophisticated%20color%20palette%2C%20hospitality%20interior%20design%2C%20photorealistic%20rendering&width=600&height=400&seq=interior7&orientation=landscape" alt="Hotel Lobby" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Hospitality</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Grand Azure Hotel</h3>
+<p class="text-gray-600">Luxury Lobby</p>
+</div>
+</div>
+<!-- Showcase Item 8 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=modern%20bedroom%20with%20king%20bed%2C%20custom%20headboard%2C%20ambient%20lighting%2C%20minimalist%20furniture%2C%20luxury%20textiles%2C%20neutral%20color%20palette%2C%20floor-to-ceiling%20windows%2C%20residential%20interior%20design%2C%20photorealistic%20rendering&width=600&height=400&seq=interior8&orientation=landscape" alt="Master Bedroom" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Residential</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Tranquil Retreat</h3>
+<p class="text-gray-600">Master Bedroom</p>
+</div>
+</div>
+<!-- Showcase Item 9 -->
+<div class="showcase-item group overflow-hidden rounded-lg shadow-lg cursor-pointer">
+<div class="relative overflow-hidden h-72">
+<img src="https://readdy.ai/api/search-image?query=modern%20conference%20room%20with%20glass%20table%2C%20ergonomic%20chairs%2C%20presentation%20screen%2C%20minimalist%20design%2C%20acoustic%20panels%2C%20ambient%20lighting%2C%20corporate%20interior%20design%2C%20professional%20meeting%20space%2C%20photorealistic%20rendering&width=600&height=400&seq=interior9&orientation=landscape" alt="Conference Room" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110">
+<div class="showcase-overlay absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 transition-opacity duration-300">
+<span class="text-white text-sm font-medium px-4 py-2 border border-white/30 rounded-full">Commercial</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-xl font-bold">Nexus Boardroom</h3>
+<p class="text-gray-600">Corporate Space</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Preview -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row items-center gap-12">
+<div class="w-full md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Design Philosophy</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">At Horizon Interior Designs, we believe that exceptional spaces are born from a deep understanding of our clients' needs, aspirations, and lifestyles. Founded in 2015 by award-winning designer Olivia Richardson, our studio has grown into a collective of passionate creatives dedicated to transforming interior spaces into personalized sanctuaries.</p>
+<p class="text-gray-600 mb-8 leading-relaxed">We approach each project with a commitment to balance—merging aesthetics with functionality, tradition with innovation, and luxury with sustainability. Our collaborative process ensures that every design decision reflects your unique story while adhering to the highest standards of craftsmanship and attention to detail.</p>
+<a href="about.html" class="inline-block px-8 py-4 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all shadow-lg whitespace-nowrap cursor-pointer">Learn More</a>
+</div>
+<div class="w-full md:w-1/2">
+<div class="relative">
+<img src="https://readdy.ai/api/search-image?query=interior%20designer%20working%20with%20client%20in%20a%20stylish%20studio%2C%20looking%20at%20material%20samples%2C%20blueprints%20on%20table%2C%20elegant%20office%20space%2C%20professional%20atmosphere%2C%20collaborative%20design%20process%2C%20high-end%20interior%20design%20consultation%2C%20photorealistic%20rendering&width=600&height=500&seq=about1&orientation=portrait" alt="Design Process" class="w-full h-auto rounded-lg shadow-xl">
+<div class="absolute -bottom-6 -left-6 w-32 h-32 bg-primary rounded-lg shadow-lg flex items-center justify-center">
+<p class="text-white text-center font-bold">10+ Years Experience</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section id="resources" class="py-20 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Design Resources</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Explore our curated collection of interior design insights, trends, and practical tips to inspire your next project.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Resource Card 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%20interior%20design%20trends%202025%2C%20luxury%20living%20room%20with%20biophilic%20elements%2C%20sustainable%20materials%2C%20smart%20home%20technology%20integration%2C%20neutral%20color%20palette%20with%20bold%20accents%2C%20contemporary%20furniture%2C%20architectural%20details%2C%20photorealistic%20rendering&width=600&height=400&seq=resource1&orientation=landscape" alt="Interior Design Trends" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-3">Top 5 Interior Design Trends for 2025</h3>
+<p class="text-gray-600 mb-4">Discover the emerging trends shaping luxury interiors this year, from biophilic design to smart home integration and sustainable luxury.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center cursor-pointer">
+Read More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Resource Card 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=before%20and%20after%20interior%20transformation%2C%20living%20room%20makeover%2C%20dramatic%20lighting%20change%2C%20new%20furniture%20layout%2C%20color%20palette%20transformation%2C%20modern%20design%20update%2C%20high-end%20renovation%2C%20photorealistic%20comparison&width=600&height=400&seq=resource2&orientation=landscape" alt="Home Transformation" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-3">Dramatic Home Transformations: Before & After</h3>
+<p class="text-gray-600 mb-4">Explore stunning space transformations that showcase the power of thoughtful interior design to completely reimagine living environments.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center cursor-pointer">
+Read More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Resource Card 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+<div class="h-60 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=luxury%20small%20space%20interior%20design%2C%20compact%20apartment%20with%20clever%20storage%20solutions%2C%20multifunctional%20furniture%2C%20space-saving%20design%2C%20high-end%20finishes%2C%20optimized%20layout%2C%20sophisticated%20color%20palette%2C%20photorealistic%20rendering&width=600&height=400&seq=resource3&orientation=landscape" alt="Small Space Design" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold mb-3">Maximizing Small Spaces: Design Guide</h3>
+<p class="text-gray-600 mb-4">Learn expert techniques for creating luxurious, functional interiors in compact spaces through smart layout, multifunctional furniture, and visual tricks.</p>
+<a href="#" class="text-primary font-medium hover:underline flex items-center cursor-pointer">
+Read More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Client Testimonials</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Hear what our clients have to say about their experience working with Horizon Interior Designs.</p>
+</div>
+<div class="relative">
+<div class="flex overflow-x-auto pb-8 -mx-4 px-4 space-x-6 scrollbar-hide">
+<!-- Testimonial 1 -->
+<div class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20elegant%20woman%20in%20her%2040s%20with%20short%20blonde%20hair%2C%20neutral%20background%2C%20business%20attire%2C%20warm%20smile%2C%20high%20quality%20portrait&width=200&height=200&seq=client1&orientation=squarish" alt="Client" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Victoria Bennett</h4>
+<p class="text-gray-600 text-sm">New York, NY</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"Working with Horizon transformed our penthouse beyond our expectations. Their attention to detail and ability to translate our lifestyle into design elements resulted in a space that feels both luxurious and deeply personal."</p>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20middle-aged%20man%20with%20salt%20and%20pepper%20hair%2C%20business%20casual%20attire%2C%20confident%20smile%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=client2&orientation=squarish" alt="Client" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Jonathan Mercer</h4>
+<p class="text-gray-600 text-sm">Chicago, IL</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"As a CEO, I needed my office to reflect our company's values while providing functionality. Horizon delivered a sophisticated space that impresses clients and inspires our team. Their process was efficient and the results exceptional."</p>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20elegant%20woman%20in%20her%2030s%20with%20long%20dark%20hair%2C%20business%20casual%20attire%2C%20warm%20smile%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=client3&orientation=squarish" alt="Client" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Sophia Rodriguez</h4>
+<p class="text-gray-600 text-sm">Miami, FL</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"Horizon redesigned our restaurant with impeccable taste. They understood our culinary vision and created an ambiance that enhances the dining experience. Our customers frequently compliment the space, which has significantly boosted our business."</p>
+</div>
+<!-- Testimonial 4 -->
+<div class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20young%20man%20in%20his%2030s%20with%20glasses%2C%20business%20casual%20attire%2C%20friendly%20smile%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=client4&orientation=squarish" alt="Client" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Daniel Westbrook</h4>
+<p class="text-gray-600 text-sm">San Francisco, CA</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"The team at Horizon expertly balanced aesthetics with functionality in our tech startup office. They created a space that fosters creativity and collaboration while maintaining a sophisticated edge that aligns with our brand identity."</p>
+</div>
+<!-- Testimonial 5 -->
+<div class="testimonial-card flex-shrink-0 w-full md:w-96 bg-white rounded-lg shadow-lg p-8">
+<div class="flex items-center mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20elegant%20couple%20in%20their%2050s%2C%20business%20casual%20attire%2C%20warm%20smiles%2C%20neutral%20background%2C%20high%20quality%20portrait&width=200&height=200&seq=client5&orientation=squarish" alt="Client" class="w-full h-full object-cover object-top">
+</div>
+<div>
+<h4 class="font-bold">Robert & Emily Chen</h4>
+<p class="text-gray-600 text-sm">Boston, MA</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 italic">"After downsizing from our family home, we were concerned about maintaining luxury in a smaller space. Horizon created a stunning apartment that feels spacious and elegant. Their innovative storage solutions and thoughtful design have enhanced our lifestyle."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trusted By -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<h2 class="text-xl font-medium text-center text-gray-600 mb-12">Trusted By</h2>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-google-fill ri-3x text-gray-400"></i>
+</div>
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-amazon-fill ri-3x text-gray-400"></i>
+</div>
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-microsoft-fill ri-3x text-gray-400"></i>
+</div>
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-netflix-fill ri-3x text-gray-400"></i>
+</div>
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-apple-fill ri-3x text-gray-400"></i>
+</div>
+<div class="partner-logo w-32 h-16 flex items-center justify-center cursor-pointer">
+<i class="ri-facebook-fill ri-3x text-gray-400"></i>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="flex flex-col md:flex-row gap-12">
+<div class="w-full md:w-1/2">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Bring Your Dream Space to Life</h2>
+<p class="text-gray-600 mb-8 leading-relaxed">Ready to transform your space? Contact us today to schedule a consultation with our design team. We'll discuss your vision, requirements, and how we can create an interior that perfectly reflects your lifestyle and aspirations.</p>
+<div class="mb-8">
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<p>1234 Design Avenue, New York, NY 10001</p>
+</div>
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<p>+1 (212) 555-7890</p>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<p>info@horizoninteriors.com</p>
+</div>
+</div>
+<div>
+<p class="font-medium mb-4">Follow Us</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<i class="ri-pinterest-line"></i>
+</a>
+<a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center hover:bg-primary hover:text-white transition-colors cursor-pointer">
+<i class="ri-linkedin-line"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<div class="bg-white rounded-lg shadow-lg p-8">
+<h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
+<form>
+<div class="mb-6">
+<label for="name" class="block text-gray-700 mb-2">Full Name</label>
+<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary text-sm" placeholder="Your name">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Email Address</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary text-sm" placeholder="Your email">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary text-sm" placeholder="Your phone number">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Message</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary text-sm" placeholder="Tell us about your project"></textarea>
+</div>
+<div class="mb-6 flex items-start">
+<input type="checkbox" id="privacy" class="custom-checkbox mr-3 cursor-pointer">
+<label for="privacy" class="text-sm text-gray-600">I agree to the <a href="#" class="text-primary hover:underline cursor-pointer">Privacy Policy</a> and consent to having my data processed.</label>
+</div>
+<button type="submit" class="w-full px-8 py-4 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all shadow-lg whitespace-nowrap cursor-pointer">Send Message</button>
+<p class="text-sm text-gray-500 mt-4 text-center">Spots fill fast! We'll respond within 24 hours.</p>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-secondary text-white py-16">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 flex items-center justify-center">
+<i class="ri-home-smile-fill ri-2x text-primary"></i>
+</div>
+<a href="index.html" class="text-3xl font-['Pacifico'] text-white mb-6 inline-block cursor-pointer">Horizon</a>
+</div>
+<p class="text-gray-300 mb-6">Transforming ordinary spaces into extraordinary experiences through thoughtful, bespoke interior design.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">
+<i class="ri-facebook-line"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">
+<i class="ri-pinterest-line"></i>
+</a>
+<a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">
+<i class="ri-linkedin-line"></i>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a href="index.html" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Home</a></li>
+<li><a href="about.html" class="text-gray-300 hover:text-white transition-colors cursor-pointer">About Us</a></li>
+<li><a href="#portfolio" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Portfolio</a></li>
+<li><a href="#resources" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Resources</a></li>
+<li><a href="#contact" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Services</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Residential Design</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Commercial Spaces</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Hospitality Design</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Space Planning</a></li>
+<li><a href="#" class="text-gray-300 hover:text-white transition-colors cursor-pointer">Custom Furniture</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-6">Newsletter</h4>
+<p class="text-gray-300 mb-4">Subscribe to receive design inspiration and exclusive updates.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-3 w-full rounded-l border-none focus:outline-none text-gray-800 text-sm">
+<button type="submit" class="bg-primary text-white px-4 py-3 rounded-r hover:bg-opacity-90 transition-colors whitespace-nowrap cursor-pointer">Subscribe</button>
+</div>
+</form>
+<div class="flex space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill ri-lg text-gray-300"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill ri-lg text-gray-300"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill ri-lg text-gray-300"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill ri-lg text-gray-300"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Horizon Interior Designs. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-400 text-sm hover:text-white transition-colors cursor-pointer">Privacy Policy</a>
+<a href="#" class="text-gray-400 text-sm hover:text-white transition-colors cursor-pointer">Terms of Service</a>
+<a href="#" class="text-gray-400 text-sm hover:text-white transition-colors cursor-pointer">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Button -->
+<a href="https://wa.me/1234567890" class="whatsapp-button fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white z-50 cursor-pointer">
+<i class="ri-whatsapp-line ri-2x"></i>
+</a>
+<!-- Cookie Consent -->
+<div class="fixed bottom-0 left-0 right-0 bg-white shadow-lg p-4 z-40 flex flex-col md:flex-row items-center justify-between" id="cookie-consent">
+<div class="mb-4 md:mb-0 md:mr-6">
+<p class="text-gray-700">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.</p>
+</div>
+<div class="flex space-x-4">
+<button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-button hover:bg-gray-300 transition-colors whitespace-nowrap cursor-pointer">Cookie Settings</button>
+<button class="px-4 py-2 bg-primary text-white rounded-button hover:bg-opacity-90 transition-colors whitespace-nowrap cursor-pointer" id="accept-cookies">Accept All</button>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Navbar scroll effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+if (window.scrollY > 50) {
+navbar.classList.add('bg-secondary', 'shadow-md');
+navbar.classList.remove('bg-transparent');
+} else {
+navbar.classList.add('bg-transparent');
+navbar.classList.remove('bg-secondary', 'shadow-md');
+}
+});
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden');
+const closeButton = document.getElementById('close-menu');
+const mobileMenu = document.getElementById('mobile-menu');
+menuButton.addEventListener('click', function() {
+mobileMenu.classList.remove('translate-x-full');
+});
+closeButton.addEventListener('click', function() {
+mobileMenu.classList.add('translate-x-full');
+});
+// Cookie consent
+const cookieConsent = document.getElementById('cookie-consent');
+const acceptCookies = document.getElementById('accept-cookies');
+if (localStorage.getItem('cookiesAccepted') !== 'true') {
+cookieConsent.classList.remove('hidden');
+} else {
+cookieConsent.style.display = 'none';
+}
+acceptCookies.addEventListener('click', function() {
+localStorage.setItem('cookiesAccepted', 'true');
+cookieConsent.style.display = 'none';
+});
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function(e) {
+e.preventDefault();
+// Close mobile menu if open
+mobileMenu.classList.add('translate-x-full');
+const targetId = this.getAttribute('href');
+if (targetId === '#') return;
+const targetElement = document.querySelector(targetId);
+if (targetElement) {
+targetElement.scrollIntoView({
+behavior: 'smooth',
+block: 'start'
+});
+}
+});
+});
+// Custom checkbox functionality
+const checkboxes = document.querySelectorAll('.custom-checkbox');
+checkboxes.forEach(checkbox => {
+checkbox.addEventListener('click', function() {
+this.checked = !this.checked;
+});
+});
+});
+</script>
+</body>
+</html>

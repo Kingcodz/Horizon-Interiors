@@ -170,6 +170,59 @@ background-color: #D4AF37;
 input:checked + .switch-slider:before {
 transform: translateX(24px);
 }
+
+@keyframes heroFadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-section {
+  animation: heroFadeZoom 5s ease-out forwards;
+}
+
+@keyframes parallaxShift {
+  0% {
+    background-position: center 0px;
+  }
+  100% {
+    background-position: center 40px;
+  }
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  animation: parallaxShift 10s ease-in-out infinite alternate;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+.hero-overlay {
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(0,0,0,0.2));
+  z-index: 1;
+  position: absolute;
+  inset: 0;
+}
+
+.hero-section {
+  background-image: url('./img/landing.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  animation: heroFadeZoom 2s ease-out forwards;
+}
+
 </style>
 </head>
 <body>
@@ -213,8 +266,8 @@ transform: translateX(24px);
 </div>
 <!-- Hero Section -->
 <section class="hero-section h-screen flex items-center">
-<div class="hero-overlay absolute inset-0"></div>
-<div class="container mx-auto px-6 z-10">
+<div class="hero-overlay absolute inset-0 z-0"></div>
+<div class="container mx-auto px-6 z-10 relative">
 <div class="w-full md:w-2/3 lg:w-1/2">
 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Where Vision Meets Space</h1>
 <p class="text-lg md:text-xl text-white/90 mb-8 max-w-xl">Transforming ordinary spaces into extraordinary experiences. Horizon Interior Designs crafts bespoke interiors that reflect your unique personality and lifestyle.</p>
@@ -823,24 +876,36 @@ this.checked = !this.checked;
 });
 
 // To send mail
+
   function sendMail() {
+    // Get form values
     const name = document.getElementById("contactName").value.trim();
     const email = document.getElementById("contactEmail").value.trim();
     const phone = document.getElementById("contactPhone").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
-    const checkbox = document.querySelector('#contactForm input[type="checkbox"]');
+    const checkbox = document.querySelector("input[type='checkbox']");
 
-    if (!name || !email || !message || !checkbox.checked) {
-      alert("Please fill all required fields and agree to the privacy policy.");
+    // Validate checkbox
+    if (!checkbox.checked) {
+      alert("Please agree to the Privacy Policy before sending.");
       return;
     }
 
-    const subject = `New Inquiry from Client: ${name}`;
-    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+    // Construct email components
+    const recipient = "yourname@example.com"; // 🔁 Replace with your email
+    const subject = encodeURIComponent("New Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`
+    );
 
-    const mailto = `mailto:info@horizoninteriors.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    // Create mailto link
+    const mailtoLink = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+    // Open email app
+    window.location.href = mailtoLink;
   }
+
+
 
 </script>
 </body>

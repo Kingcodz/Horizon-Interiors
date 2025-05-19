@@ -13,10 +13,6 @@
    })();
 </script>
 <script>tailwind.config={theme:{extend:{colors:{primary:'#D4AF37',secondary:'#333333'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script src="script.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -63,26 +59,49 @@ outline: none;
 border-color: #D4AF37;
 }
 .custom-checkbox {
-appearance: none;
--webkit-appearance: none;
-width: 20px;
-height: 20px;
-border: 2px solid #7D7D7D;
-border-radius: 4px;
-outline: none;
-cursor: pointer;
 position: relative;
+padding-left: 30px;
+cursor: pointer;
+user-select: none;
 }
-.custom-checkbox:checked {
-background-color: #D4AF37;
-border-color: #D4AF37;
-}
-.custom-checkbox:checked::after {
-content: '';
+.custom-checkbox input {
 position: absolute;
-top: 3px;
+opacity: 0;
+cursor: pointer;
+height: 0;
+width: 0;
+}
+.hover-scale {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+.hover-rotate {
+  transition: transform 0.4s ease;
+}
+.hover-rotate:hover {
+  transform: rotate(8deg);
+}
+.custom-checkbox:hover input ~ .checkmark {
+border-color: #0078c8;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #0078c8;
+border-color: #0078c8;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
 left: 6px;
-width: 6px;
+top: 2px;
+width: 5px;
 height: 10px;
 border: solid white;
 border-width: 0 2px 2px 0;
@@ -602,30 +621,44 @@ Read More
 <div class="w-full md:w-1/2">
 <div class="bg-white rounded-lg shadow-lg p-8">
 <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
-<form>
-<div class="mb-6">
-<label for="name" class="block text-gray-700 mb-2">Full Name</label>
-<input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Your name">
+
+
+<form id="contactForm">
+<div class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+<input type="text" id="contactName" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Your name">
 </div>
-<div class="mb-6">
-<label for="email" class="block text-gray-700 mb-2">Email Address</label>
-<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Your email" required>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+<input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" id="contactEmail" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Valid email address" aria-required>
 </div>
-<div class="mb-6">
-<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Your phone number">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="contactPhone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="E.g 09012345678">
 </div>
-<div class="mb-6">
-<label for="message" class="block text-gray-700 mb-2">Message</label>
-<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-primary" placeholder="Tell us about your project"></textarea>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="contactMessage" name="message" required rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary" placeholder="Your location and the Place you want to Design and any other information."></textarea>
 </div>
-<div class="mb-6 flex items-start">
-<!-- <input type="checkbox" id="privacy" class="custom-checkbox mr-3" required> -->
-<input type="checkbox" class="mr-3" id="privacy" required>
-<label for="privacy" class="text-sm text-gray-600">I agree to the <a href="index2.html#privacy-policy" class="text-primary hover:underline">Privacy Policy</a> and consent to having my data processed.</label>
+<div class="flex items-start">
+<!-- <label class="custom-checkbox"> -->
+<input type="checkbox" required>
+<span class="checkmark"></span>
+
+<label for="privacy" class="text-sm text-gray-600 ml-3">
+   <span>I agree to the <a href="index2.html#privacy-policy" class="text-primary hover:underline">Privacy Policy</a> and consent to having my data processed.</span></label>
+
+
 </div>
-<button type="submit" class="w-full px-8 py-4 bg-primary text-white font-medium rounded-button hover:bg-opacity-90 transition-all shadow-lg whitespace-nowrap" onclick="sendMail()">Send Message</button>
+
+<button type="button" onclick="sendMail()" class="w-full bg-primary hover:bg-primary/90 text-white py-3 px-8 font-medium !rounded-button whitespace-nowrap hover-scale">
+  Send Message
+</button>
+
+
 <p class="text-sm text-gray-500 mt-4 text-center">Spots fill fast! We'll respond within 24 hours.</p>
+</div>
 </form>
 </div>
 </div>
@@ -788,15 +821,27 @@ this.checked = !this.checked;
 });
 });
 });
-function sendMail(){
-    let parms = {
-        name : document.getElementById("name").value,
-        email : document.getElementById("email").value,
-        phone : document.getElementById("phone").value,
-        message : document.getElementById("messsage").value,
+
+// To send mail
+  function sendMail() {
+    const name = document.getElementById("contactName").value.trim();
+    const email = document.getElementById("contactEmail").value.trim();
+    const phone = document.getElementById("contactPhone").value.trim();
+    const message = document.getElementById("contactMessage").value.trim();
+    const checkbox = document.querySelector('#contactForm input[type="checkbox"]');
+
+    if (!name || !email || !message || !checkbox.checked) {
+      alert("Please fill all required fields and agree to the privacy policy.");
+      return;
     }
-    email.js.sendMail("service_x3pymkk","template_g34vua9",parms).then(alert("Email Sent!!"))
-}
+
+    const subject = `New Inquiry from Client: ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+
+    const mailto = `mailto:info@horizoninteriors.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  }
+
 </script>
 </body>
 </html>

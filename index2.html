@@ -77,6 +77,18 @@ border: solid white;
 border-width: 0 2px 2px 0;
 transform: rotate(45deg);
 }
+.hover-scale {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+.hover-rotate {
+  transition: transform 0.4s ease;
+}
+.hover-rotate:hover {
+  transform: rotate(8deg);
+}
 .whatsapp-button {
 box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 transition: all 0.3s ease;
